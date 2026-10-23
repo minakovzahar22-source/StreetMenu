@@ -1,0 +1,14 @@
+name: build
+on: [push, workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: pspdev/pspdev:latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: psp-pacman -S --noconfirm libpng
+      - run: make
+      - uses: actions/upload-artifact@v4
+        with:
+          name: StreetMenu
+          path: EBOOT.PBP
