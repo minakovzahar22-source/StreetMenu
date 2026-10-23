@@ -19,7 +19,7 @@
 
 PSP_MODULE_INFO("StreetMenu", 0, 1, 0);
 PSP_MAIN_THREAD_ATTR(THREAD_ATTR_USER | THREAD_ATTR_VFPU);
-PSP_HEAP_SIZE_MAX();
+int sce_newlib_heap_kb_size = -1024;
 
 #define BUF_W      512
 #define SCR_W      480
