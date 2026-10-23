@@ -6,7 +6,6 @@ jobs:
     container: pspdev/pspdev:latest
     steps:
       - uses: actions/checkout@v4
-      - run: psp-pacman -S --noconfirm libpng
       - run: make
       - uses: actions/upload-artifact@v4
         with:
